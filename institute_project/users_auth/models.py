@@ -21,8 +21,15 @@ class BasicInfoModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
 class StudentModel(BasicInfoModel):
+    user = models.OneToOneField(UserModel, on_delete=models.CASCADE, related_name='student_profile', null=True)
     roll_no = models.CharField(max_length=20, null=True)
     image = models.ImageField(upload_to='media/student_img', null=True)
 
 class TeacherModel(BasicInfoModel):
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    user = models.OneToOneField(
+        UserModel,
+        on_delete=models.CASCADE,
+        related_name='teacher_profile',
+        null=True
+    )
+    joining_date = models.DateField(null=True)
