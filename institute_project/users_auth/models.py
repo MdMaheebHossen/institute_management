@@ -9,3 +9,6 @@ class UserModel(AbstractUser):
         ('Student', 'Student'),
     ]
     user_type = models.CharField(choices=USER_TYPE, max_length=20, null=True)
+
+    def __str__(self):
+        return f'{self.username}'
