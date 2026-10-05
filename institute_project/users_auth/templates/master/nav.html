@@ -6,10 +6,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'dashboard_view' %}">Dashboard</a>
+          <a class="nav-link" href="#">Student</a>
+          <a class="nav-link" href="#">Teacher</a>
+          <a class="nav-link" href="{% url 'logout_view' %}" tabindex="-1" aria-disabled="true">Logout</a>
         </div>
       </div>
     </div>
