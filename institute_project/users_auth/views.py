@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib import messages
 
 def login_view(request):
@@ -20,6 +20,11 @@ def login_view(request):
     }
 
     return render(request, 'login.html', context)
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'Logged Out Successfully')
+    return redirect('login_view')
 
 def dashboard_view(request):
 
