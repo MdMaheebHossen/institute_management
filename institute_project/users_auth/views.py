@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib import messages
@@ -26,6 +27,7 @@ def logout_view(request):
     messages.success(request, 'Logged Out Successfully')
     return redirect('login_view')
 
+@login_required
 def dashboard_view(request):
 
 
